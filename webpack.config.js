@@ -10,17 +10,17 @@ module.exports = {
         static: path.resolve(__dirname, 'public'),
         hot: true,
     },
-    entry: path.resolve(__dirname, 'src', 'index.jsx'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
     module: {
         rules: [{
-                test: /\.jsx$/,
+                test: /\.(j|t)sx$/,
                 exclude: /node_modules/,
                 use: [{
                     loader: require.resolve('babel-loader'),
