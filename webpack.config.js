@@ -19,23 +19,20 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.jsx$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: require.resolve('babel-loader'),
-                        options: {
-                            plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean)
-                        }
+                use: [{
+                    loader: require.resolve('babel-loader'),
+                    options: {
+                        plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean)
                     }
-                ],
+                }],
             },
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                use: ['style-loader', 'css-loader', 'sass-loader'] ,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             }
         ]
     },
@@ -43,5 +40,6 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: path.resolve(__dirname, 'public', 'index.html')
         }),
-        isDevelopment && new ReactRefreshWebpackPlugin()].filter(Boolean)
+        isDevelopment && new ReactRefreshWebpackPlugin()
+    ].filter(Boolean)
 }
