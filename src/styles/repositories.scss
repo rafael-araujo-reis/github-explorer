@@ -20,6 +20,10 @@ section.repository-list{
                 font-size: 16px;
                 color: #444444;
                 margin-top: 8px;
+
+                white-space: nowrap; //deixar na msm linha
+                overflow: hidden; //oculta o que passar
+                text-overflow: ellipsis; 
             }
             a{
                 display: inline-block;
